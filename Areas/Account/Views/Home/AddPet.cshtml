@@ -1,0 +1,74 @@
+﻿@using AdvC_Final.Areas.Account.Models
+@using Microsoft.AspNetCore.Identity
+@using AdvC_Final.Areas.Identity.Data
+@inject SignInManager<AccountLoginUser> SignInManager
+@inject UserManager<AccountLoginUser> UserManager
+@model Pets
+@{
+	ViewData["Title"] = "Add New Pet";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.title {
+			font-family: "Kdam Thmor Pro", sans-serif;
+			padding: .25em;
+			margin: .25em;
+			font-size: 5em;
+		}
+
+		.minitext {
+			font-size: .75em;
+			margin-bottom: 0em;
+			padding-bottom: .05em;
+		}
+	</style>
+</head>
+<body>
+	@if (SignInManager.IsSignedIn(User))
+	{
+		<div class="container">
+			<div class="container p-4 mb-3 mt-3 bg-info">
+				<header>
+					<h1 class="title text-dark">Add New Pet</h1>
+				</header>
+				<form asp-area="Account" asp-controller="Home" asp-action="AddPet" method="post">
+					<div asp-validation-summary="All" class="text-danger"></div>
+					<div class="mb-3">
+						<label asp-for="petName" class="form-label">Name</label>
+						<input asp-for="petName" class="form-control">
+					</div>
+					<div class="mb-3">
+						<label asp-for="petType" class="form-label">Type of Pet</label>
+						<input asp-for="petType" class="form-control">
+					</div>
+					<div class="mb-3">
+						<label asp-for="breed" class="form-label">Breed</label>
+						<input asp-for="breed" class="form-control">
+					</div>
+					<div class="mb-3">
+						<label asp-for="gender" class="form-label">Gender</label>
+						<input asp-for="gender" class="form-control">
+					</div>
+					<div class="mb-3">
+						<label asp-for="birthday" class="form-label">Birthday</label>
+						<input asp-for="birthday" class="form-control">
+					</div>
+					<div class="mb-3">
+						<label asp-for="age" class="form-label">Age</label>
+						<input asp-for="age" class="form-control">
+					</div>
+					<div class="mb-3">
+						<label asp-for="info" class="form-label">Other Information</label>
+						<input asp-for="info" class="form-control">
+					</div>
+					<button type="submit" class="btn btn-light mb-3">Submit</button>
+				</form>
+				<a class="btn btn-light text-dark" role="button" asp-area="Account" asp-controller="Home" asp-action="Index">Return To Account</a>
+			</div>
+		</div>
+	}
+</body>
+</html>

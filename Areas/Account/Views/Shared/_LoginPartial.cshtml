@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using AdvC_Final.Areas.Identity.Data
+
+@inject SignInManager<AccountLoginUser> SignInManager
+@inject UserManager<AccountLoginUser> UserManager
+
+<ul class="navbar-nav">
+@if (!SignInManager.IsSignedIn(User))
+{
+    <a class="btn btn-light text-dark m-2" id="registar" role="button" asp-area="Identity" asp-page="/Account/Register">Create Account</a>
+    <a class="btn btn-light text-dark m-2" id="login" role="button" asp-area="Identity" asp-page="/Account/Login">Login</a>
+}
+</ul>

@@ -1,0 +1,49 @@
+﻿@using AdvC_Final.Areas.Account.Models
+@using Microsoft.AspNetCore.Identity
+@using AdvC_Final.Areas.Identity.Data
+@inject SignInManager<AccountLoginUser> SignInManager
+@inject UserManager<AccountLoginUser> UserManager
+@model Pets
+@{
+	ViewData["Title"] = "Remove Pets";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.title {
+			font-family: "Kdam Thmor Pro", sans-serif;
+			padding: .25em;
+			margin: .25em;
+			font-size: 5em;
+		}
+
+		.minitext {
+			font-size: .75em;
+			margin-bottom: 0em;
+			padding-bottom: .05em;
+		}
+
+		.name {
+			font-family: "Kdam Thmor Pro", sans-serif;
+			padding: .25em;
+			margin: .25em;
+			font-size: 2.5em;
+		}
+	</style>
+</head>
+<body>
+	<div class="container bg-info">
+		<header>
+			<h1 class="title text-dark">Are you sure you want to remove this pet?</h1>
+			<p class="name d-flex justify-content-center">@Model.petName</p>
+		</header>
+		<form asp-action="RemovePet" method="post" class="d-flex justify-content-center">
+			<input type="hidden" asp-for="Id" />
+			<button type="submit" class="btn btn-light m-3">Delete</button>
+			<a asp-area="Account" asp-controller="Home" asp-action="Pets" class="btn btn-light m-3">Cancel</a>
+		</form>
+	</div>
+</body>
+</html>
