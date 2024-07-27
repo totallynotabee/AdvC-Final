@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+@model AdvC_Final.Models.Pets
+
+@{
+    ViewData["Title"] = "Add Pet";
+    var authorizationResult = AuthorizationService.AuthorizeAsync(User, "CanAddPet").Result;
+}
+
+<h2>Add a New Pet</h2>
+
+@if (authorizationResult.Succeeded)
+{
+    <form method="post" asp-action="AddPet">
+        <div class="form-group">
+            <label asp-for="PetName" class="control-label"></label>
+            <input asp-for="PetName" class="form-control" />
+            <span asp-validation-for="PetName" class="text-danger"></span>
+        </div>
+        <!-- Other fields here -->
+        <button type="submit" class="btn btn-primary">Add Pet</button>
+    </form>
+}
+else
+{
+    <p>You do not have permission to add pets.</p>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

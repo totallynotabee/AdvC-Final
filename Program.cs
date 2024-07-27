@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using AdvC_Final.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
-using AdvC_Final.Areas.Account.Models;
+using AdvC_Final.Models;  // Ensure this is correctly referenced
 
 namespace AdvC_Final
 {
@@ -16,9 +16,9 @@ namespace AdvC_Final
 
 			var connectionString = builder.Configuration.GetConnectionString("AccountLoginContextConnection") ?? throw new InvalidOperationException("Connection string 'AccountLoginContextConnection' not found.");
 
-		    builder.Services.AddDbContext<AccountLoginContext>(options => options.UseSqlite(connectionString));
+			builder.Services.AddDbContext<AccountLoginContext>(options => options.UseSqlite(connectionString));
 
-		    builder.Services.AddDefaultIdentity<AccountLoginUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AccountLoginContext>();
+			builder.Services.AddDefaultIdentity<AccountLoginUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AccountLoginContext>();
 
 			builder.Services.AddRouting(options =>
 			{
@@ -29,7 +29,15 @@ namespace AdvC_Final
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
 
+			// Configure PetsContext with SQL Server
 			builder.Services.AddDbContext<PetsContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PetsContext")));
+
+			// Configure authorization policies
+			builder.Services.AddAuthorization(options =>
+			{
+				options.AddPolicy("CanAddPet", policy =>
+					policy.RequireRole("Admin", "PetManager"));
+			});
 
 			var app = builder.Build();
 
@@ -46,6 +54,7 @@ namespace AdvC_Final
 
 			app.UseRouting();
 
+			app.UseAuthentication();  // Ensure authentication is enabled
 			app.UseAuthorization();
 
 			app.UseSession();
@@ -65,3 +74,4 @@ namespace AdvC_Final
 		}
 	}
 }
+

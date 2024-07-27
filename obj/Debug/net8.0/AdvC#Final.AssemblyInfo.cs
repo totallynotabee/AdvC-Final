@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdvC#Final")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c61e5e126dfdd3ce4c64aa01ce7235427cc9ffca")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdvC#Final")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdvC#Final")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
