@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Security.Policy;
 
 namespace AdvC_Final.Areas.Account.Models
 {
@@ -8,7 +9,16 @@ namespace AdvC_Final.Areas.Account.Models
 		public DbSet<Pets> Pets { get; set; } = null!;
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Pets>();
-		}
+			modelBuilder.Entity<Pets>().HasData(
+                new Pets
+                {
+                    Id = 1,
+                    ownerName = "fill",
+                    petName = "name",
+                    petType = "type"
+                });
+            
+
+        }
 	}
 }

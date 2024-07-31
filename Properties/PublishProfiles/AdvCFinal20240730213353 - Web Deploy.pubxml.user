@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqpuPk66LDUm2H/Sm3PbEiQAAAAACAAAAAAAQZgAAAAEAACAAAADiTTFO7YYd7F7z3j7wmac4vc8gHz55FGz7z3770H+A4wAAAAAOgAAAAAIAACAAAABzzREd5JwnQb2oAfpKT5iw33ABXOEW2OwJma3IihszWoAAAAAPcMV4zBOwhKz/LCEdTvkOiFZsFRAM9goBxQCh5AtP9XyYnz+QrHMh/VByP5rTubhRdzSVJjoTxb+gaABv9+IcRg1t/dsSkvdLHbPPup7ASJRzawNFcS2zJ/wZEarO4CNucfMWaByVXWNhqNUceIixMBpJckQOzpiOVullw9agf0AAAACjtkHv9BjJLW2qDa9RPCQRWGIfJbFY88rM7KaBN3m6HAIpKnVHDlsJxV6+9XWahWW9zUHN/UGt5FHNBAJpjcd6</EncryptedPassword>
+    <History>True|2024-07-31T05:31:48.8111442Z||;False|2024-07-31T00:19:05.5832056-05:00||;False|2024-07-31T00:01:41.1338047-05:00||;True|2024-07-30T23:50:29.8098410-05:00||;True|2024-07-30T23:43:16.5632383-05:00||;True|2024-07-30T23:25:46.9871041-05:00||;True|2024-07-30T23:20:59.6705360-05:00||;True|2024-07-30T23:17:56.3750657-05:00||;False|2024-07-30T23:11:59.6598248-05:00||;True|2024-07-30T22:58:25.7210536-05:00||;True|2024-07-30T22:55:29.8184317-05:00||;True|2024-07-30T22:51:12.9244112-05:00||;True|2024-07-30T22:48:02.7929340-05:00||;True|2024-07-30T22:43:55.5134934-05:00||;False|2024-07-30T22:08:20.5254064-05:00||;True|2024-07-30T22:04:52.1176920-05:00||;False|2024-07-30T22:01:35.8983774-05:00||;False|2024-07-30T22:00:10.7900657-05:00||;False|2024-07-30T21:57:41.8408270-05:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="AccountLoginContextConnection">
+      <Value>Data Source=advcfinal-logindbserver.database.windows.net,1433%3bInitial Catalog=AdvC#Final_db_login%3bUser ID=CIS174admin%3bPassword=Admin%401234</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="PetsContext">
+      <Value>Data Source=advcfinal-logindbserver.database.windows.net,1433%3bInitial Catalog=AdvC#Final_db_login%3bUser ID=CIS174admin%3bPassword=Admin%401234</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="AdvC_Final.Areas.Account.Models.PetsContext">
+      <Value>Data Source=advcfinal-logindbserver.database.windows.net,1433%3bInitial Catalog=AdvC#Final_db_login%3bUser ID=CIS174admin%3bPassword=Admin%401234</Value>
+    </EFMigrations>
+    <EFMigrations Include="AdvC_Final.Areas.Identity.Data.AccountLoginContext">
+      <Value>Data Source=advcfinal-logindbserver.database.windows.net,1433%3bInitial Catalog=AdvC#Final_db_login%3bUser ID=CIS174admin%3bPassword=Admin%401234</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

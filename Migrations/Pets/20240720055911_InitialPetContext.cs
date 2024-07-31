@@ -29,7 +29,12 @@ namespace AdvC_Final.Migrations.Pets
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pets", x => x.Id);
+
                 });
+            migrationBuilder.InsertData(
+                table: "Pets",
+                columns: new[] { "Id", "age", "birthday", "breed", "gender", "info", "ownerName", "petName", "petType" },
+                values: new object[] { 1, null, null, "", "", "", "fill", "name", "type" });
         }
 
         /// <inheritdoc />

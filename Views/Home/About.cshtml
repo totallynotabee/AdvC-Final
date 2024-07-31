@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            background: url('/path/to/your/background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-bottom: 5px solid #ff9800;
+        }
+
+            .header h1 {
+                font-size: 3em;
+                margin-bottom: 20px;
+            }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>About Us</h1>
+        <p>Learn more about our mission to provide the best pet care information.</p>
+    </header>
+    <div class="container mt-5">
+        <h2>Our Mission</h2>
+        <p>At Pet Informational Tracker, our mission is to provide pet owners with the most accurate and up-to-date information to ensure their pets live happy, healthy lives.</p>
+    </div>
+    <footer class="footer mt-5">
+        <p>&copy; 2024 Pet Informational Tracker. All rights reserved.</p>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

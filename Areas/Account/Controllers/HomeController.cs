@@ -11,11 +11,13 @@ namespace AdvC_Final.Areas.Account.Controllers
 		private List<Pets> getPetList()
 		{
 			List<Pets> pets = new List<Pets>();
-			foreach (var pet in petsContext.Pets)
-			{
-				if (pet.ownerName == User.Identity.Name)
+			if (petsContext.Pets != null) {
+				foreach (var pet in petsContext.Pets)
 				{
-					pets.Add(pet);
+					if (pet.ownerName == User.Identity.Name)
+					{
+						pets.Add(pet);
+					}
 				}
 			}
 			return pets;
@@ -28,11 +30,16 @@ namespace AdvC_Final.Areas.Account.Controllers
 		}
 		public IActionResult Pets()
 		{
-			var pets = getPetList().OrderBy(n => n.petName).ToList();
-			Console.WriteLine(pets.Count.ToString());
+            var pets = getPetList();
+            if (petsContext.Pets != null)
+			{
+				 pets = getPetList().OrderBy(n => n.petName).ToList();
+			}
+
 			return View(pets);
 		}
-		[HttpGet]
+ 
+                [HttpGet]
 		public IActionResult EditPet(int id)
 		{
 			ViewBag.Action = "Edit";

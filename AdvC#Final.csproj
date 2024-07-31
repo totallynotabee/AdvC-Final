@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Account\Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
